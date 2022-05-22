@@ -1,37 +1,47 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
 
-
+import Book from './Book'
 const Home = () => {
 
 
     const [booksData, setBooksData] = useState([])
-    const [state, setState] = useState()
+    const [loading, setLoading] = useState()
+
+    const [newCall, setNewCall] = useState()
 
     useEffect(() => {
         const apiCall = async () => {
-            const res = await fetch(state !== undefined ? state : 'https://gnikdroy.pythonanywhere.com/api/book/?page=1');
+            setLoading(true)
+            const res = await fetch(newCall !== undefined ? newCall : 'https://gnikdroy.pythonanywhere.com/api/book/?page=1');
             const data = await res.json();
-            setBooksData(data)
-            console.log(state)
+            setBooksData(data);
+            setLoading(false)
         }
 
         apiCall()
-    }, [state])
-
+    }, [newCall])
     console.log(booksData)
-
+    //handling prev and next btns calls
     const handleNextClick = () => {
         if (booksData.next !== null) {
-            setState(booksData.next)
+            setNewCall(booksData.next)
+        }
+    }
+    const handlePrevClick = () => {
+        if (booksData.previous !== null) {
+            setNewCall(booksData.previous)
         }
     }
 
-    const handlePrevClick = () => {
-        if (booksData.previous !== null) {
-            setState(booksData.previous)
-        }
-    }
-    //console.log(state)
+    const books = booksData.length !== 0 ? booksData.results.map(item => {
+        return <Book
+            key={nanoid()}
+            id={item.id}
+            title={item.title}
+            resources={item.resources}
+        />
+    }) : "";
 
     return (
         <main>
@@ -48,7 +58,7 @@ const Home = () => {
                     <button onClick={handlePrevClick}>Previous</button>
                     <button onClick={handleNextClick}>Next</button>
                 </div>
-                books
+                {loading ? 'loading' : books}
             </section>
         </main>
     )
