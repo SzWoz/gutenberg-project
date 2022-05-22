@@ -40,6 +40,7 @@ const Home = () => {
             id={item.id}
             title={item.title}
             resources={item.resources}
+            authors={item.agents}
         />
     }) : "";
 
