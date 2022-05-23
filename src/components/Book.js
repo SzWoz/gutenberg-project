@@ -1,3 +1,4 @@
+import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
 
 
 export default function Book({ id, title, resources, authors }) {
@@ -8,12 +9,18 @@ export default function Book({ id, title, resources, authors }) {
     }).filter(x => x !== false)
 
     const author = authors.filter(a => a.type === 'Author')
+
+    const allAuthors = author.map(item => {
+        return <h3 key={nanoid()}>{item.person}</h3>
+    })
+
+    console.log(author)
     return (
         <article>
             <img src={imgSrc} alt="book cover" />
             <div className="details">
                 <h2>{title}</h2>
-                <h3>{author[0].person}</h3>
+                {allAuthors}
             </div>
         </article>
     )
