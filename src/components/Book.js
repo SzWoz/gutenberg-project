@@ -1,5 +1,5 @@
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
-
+import { Link } from 'react-router-dom';
 
 export default function Book({ id, title, resources, authors }) {
 
@@ -16,13 +16,15 @@ export default function Book({ id, title, resources, authors }) {
 
     console.log(author)
     return (
-        <article>
-            <img src={imgSrc} alt="book cover" />
-            <div className="details">
-                <h2>{title}</h2>
-                {allAuthors}
-            </div>
-        </article>
+        <Link to={`book/${id}`}>
+            <article>
+                <img src={imgSrc} alt="book cover" />
+                <div className="details">
+                    <h2>{title}</h2>
+                    {allAuthors}
+                </div>
+            </article>
+        </Link>
     )
 }
 
