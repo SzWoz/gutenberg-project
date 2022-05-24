@@ -65,7 +65,7 @@ const Home = () => {
             </div>
             <section>
                 <label htmlFor="search-bar">
-                    <input type="text" id="search-bar" onKeyDown={handleKeyDown} />
+                    <input type="text" id="search-bar" placeholder="Search for books" onKeyDown={handleKeyDown} />
                 </label>
             </section>
             <section>

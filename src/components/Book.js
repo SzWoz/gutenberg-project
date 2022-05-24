@@ -20,16 +20,16 @@ export default function Book({ id, title, resources, authors, desc }) {
 
     console.log(author)
     return (
-        <Link to={`book/${id}`}>
-            <article>
-                <img src={imgSrc} alt="book cover" />
-                <div className="details">
+        <article>
+            <img src={imgSrc} alt="book cover" />
+            <div className="details">
+                <Link to={`book/${id}`}>
                     <h2>{title}</h2>
-                    {allAuthors}
-                </div>
+                </Link>
+                {allAuthors}
                 <span onClick={() => { addItems(id, title, desc, author, imgSrc) }}>x</span>
-            </article>
-        </Link>
+            </div>
+        </article>
     )
 }
 

@@ -54,7 +54,11 @@ nav ul li:first-child {
 
 nav ul li:first-child a {
   width: fit-content;
-  font-weight: 900;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #2a67eb;
 }
 
 nav ul li:last-child {
