@@ -1,7 +1,11 @@
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import FavouriteContext from '../etc/FavouriteContext';
 
-export default function Book({ id, title, resources, authors }) {
+export default function Book({ id, title, resources, authors, desc }) {
+
+    const { addItems } = useContext(FavouriteContext)
 
     const imgSrc = resources.map(item => {
         if (item.uri.includes('medium')) return item.uri;
@@ -23,6 +27,7 @@ export default function Book({ id, title, resources, authors }) {
                     <h2>{title}</h2>
                     {allAuthors}
                 </div>
+                <span onClick={() => { addItems(id, title, desc, author, imgSrc) }}>x</span>
             </article>
         </Link>
     )

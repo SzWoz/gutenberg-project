@@ -52,6 +52,7 @@ const Home = () => {
             title={item.title}
             resources={item.resources}
             authors={item.agents}
+            desc={item.description}
         />
     }) : "";
 

@@ -1,12 +1,12 @@
-
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
 
     return (
         <nav>
             <ul>
-                <li>logo</li>
-                <li>favourites</li>
+                <li><NavLink to="/">Project Gutenber</NavLink></li>
+                <li><NavLink to="/favourite">fav</NavLink></li>
             </ul>
         </nav>
     )
