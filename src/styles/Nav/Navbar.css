@@ -1,0 +1,63 @@
+nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background: rgba(236, 240, 243, 0.75);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+nav ul {
+  flex-basis: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  padding: 0 5rem 0 5rem;
+}
+
+nav ul li {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 5rem;
+  height: 2rem;
+  background-color: #e6e7ee;
+  border-radius: 10px;
+  border: 1px solid #D1D9E6;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+}
+
+nav ul li a:hover {
+  box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
+}
+
+nav ul li a:nth-of-type(2) {
+  width: 5rem;
+  height: 2rem;
+  background-color: #e6e7ee;
+}
+
+nav ul li:first-child {
+  justify-content: flex-start;
+}
+
+nav ul li:first-child a {
+  width: fit-content;
+  font-weight: 900;
+}
+
+nav ul li:last-child {
+  justify-content: flex-end;
+}
+/*# sourceMappingURL=Navbar.css.map */
