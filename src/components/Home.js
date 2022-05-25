@@ -57,7 +57,6 @@ const Home = () => {
     }) : "";
 
 
-    // /api/book/?search=asd+asd
     return (
         <main>
             <div className="carousel">

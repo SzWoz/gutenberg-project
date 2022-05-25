@@ -11,7 +11,7 @@ nav {
 
 
     ul {
-        flex-basis: 50%;
+        flex-basis: 70%;
         height: 50px;
         display: flex;
         justify-content: space-between;
@@ -56,7 +56,7 @@ nav {
                     border: none;
                     box-shadow: none;
                     background-color: transparent;
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     color: $accent;
                 }
             }

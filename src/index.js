@@ -5,6 +5,8 @@ import App from './App';
 import './styles/Nav/Navbar.css'
 import './styles/Home/Home.css'
 import './styles/main.css'
+import './styles/fontello/css/fontello.css'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

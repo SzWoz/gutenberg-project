@@ -5,7 +5,7 @@ import FavouriteContext from '../etc/FavouriteContext';
 
 export default function Book({ id, title, resources, authors, desc }) {
 
-    const { addItems } = useContext(FavouriteContext)
+    const { favItems, addItems, removeItems } = useContext(FavouriteContext)
 
     const imgSrc = resources.map(item => {
         if (item.uri.includes('medium')) return item.uri;
@@ -18,7 +18,19 @@ export default function Book({ id, title, resources, authors, desc }) {
         return <h3 key={nanoid()}>{item.person}</h3>
     })
 
-    console.log(author)
+    const heartIconToggle = () => {
+        if (favItems.filter(x => x.id === id).length > 0) return 'icon-heart'
+        else return 'icon-heart-empty'
+    }
+
+    const favClickHandler = () => {
+        if (favItems.filter(x => x.id === id).length > 0) return removeItems(id)
+        else return addItems(id, title, desc, author, imgSrc)
+    }
+
+
+
+
     return (
         <article>
             <img src={imgSrc} alt="book cover" />
@@ -27,7 +39,7 @@ export default function Book({ id, title, resources, authors, desc }) {
                     <h2>{title}</h2>
                 </Link>
                 {allAuthors}
-                <span onClick={() => { addItems(id, title, desc, author, imgSrc) }}>x</span>
+                <span onClick={favClickHandler}><i className={heartIconToggle()}></i></span>
             </div>
         </article>
     )
