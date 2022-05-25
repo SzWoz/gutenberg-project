@@ -39,22 +39,24 @@ const BookPage = () => {
 
 
     return (
-        <div className="book">
-            <h1>{book.title}</h1>
-            <img src={imgSrc} alt="book cover" />
-            {
-                book.description !== null ? <a href={book.description} target="_blank">Link to description &#128214;</a> : <p>Currently there's no book description</p>
-            }
-            <a href={online.length > 1 ? online[0] : online} target="_blank">Read book online &#128241;</a>
-            <p>Downloads: {book.downloads}</p>
-            <ul>
-                <li><h2>Subjects</h2>
-                    <ul>
-                        {subjects}
-                    </ul>
-                </li>
-            </ul>
-        </div >
+        <main>
+            <div className="book">
+                <h1>{book.title}</h1>
+                <img src={imgSrc} alt="book cover" />
+                {
+                    book.description !== null ? <a href={book.description} target="_blank" rel="noreferrer">Link to description &#128214;</a> : <p>Currently there's no book description</p>
+                }
+                <a href={online.length > 1 ? online[0] : online} target="_blank" rel="noreferrer">Read book online &#128241;</a>
+                <p>Downloads: {book.downloads}</p>
+                <ul>
+                    <li><h2>Subjects</h2>
+                        <ul>
+                            {subjects}
+                        </ul>
+                    </li>
+                </ul>
+            </div >
+        </main>
     )
 }
 
