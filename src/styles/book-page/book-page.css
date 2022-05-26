@@ -7,12 +7,13 @@ main {
 }
 
 main .book {
-  width: 60%;
-  height: 50vh;
+  width: 50%;
+  height: 35vh;
   display: flex;
   box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   border-radius: 20px;
   position: relative;
+  margin: 2rem 0 2rem 0;
 }
 
 main .book img {
@@ -33,7 +34,7 @@ main .book .details h2 {
 }
 
 main .book .details p {
-  flex-basis: 30%;
+  flex-basis: 28%;
   text-align: end;
 }
 
@@ -44,6 +45,7 @@ main .book .details .dropdown-wrapper {
   margin-right: auto;
   display: flex;
   justify-content: center;
+  margin-top: -2rem;
 }
 
 main .book .details .dropdown-wrapper h2 {
@@ -111,6 +113,12 @@ main .book .details .links {
 
 main .book .details .links a {
   flex-basis: fit-content;
+  margin: 0 0 1rem .5rem;
+}
+
+main .book .details .links p {
+  flex-basis: 50%;
+  text-align: start;
   margin: 0 0 1rem .5rem;
 }
 

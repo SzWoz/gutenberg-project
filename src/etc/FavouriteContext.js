@@ -8,16 +8,16 @@ export const FavouriteProvider = ({ children }) => {
     const [favItems, setFavItems] = useState(JSON.parse(localStorage.getItem('favourite') || "[]"));
 
 
-    const addItems = (id, title, desc, author, img) => {
+    const addItems = (id, title, desc, author, img, ebook) => {
 
 
         if (favItems.length < 1) {
-            setFavItems([{ id, title, desc, author, img }])
+            setFavItems([{ id, title, desc, author, img, ebook }])
         } else {
             if (favItems.filter(x => x.id === id).length > 0) {
                 return
             } else {
-                setFavItems(prevItems => [...prevItems, { id, title, desc, author, img }])
+                setFavItems(prevItems => [...prevItems, { id, title, desc, author, img, ebook }])
             }
         }
 

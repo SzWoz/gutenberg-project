@@ -58,7 +58,7 @@ const BookPage = () => {
 
     const favClickHandler = () => {
         if (favItems.filter(x => x.id === book.id).length > 0) return removeItems(book.id)
-        else return addItems(book.id, book.title, book.description, author, imgSrc)
+        else return addItems(book.id, book.title, book.description, author, imgSrc, online)
     }
 
 

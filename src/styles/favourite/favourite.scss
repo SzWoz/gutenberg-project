@@ -1,0 +1,22 @@
+main {
+
+    .favourite-wrapper {
+        flex-basis: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+
+        .book {
+            width: 100%;
+
+            a {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+        }
+    }
+
+
+}

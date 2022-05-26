@@ -18,6 +18,13 @@ function Book({ id, title, resources, authors, desc }) {
         return <h3 key={nanoid()}>{item.person}</h3>
     })
 
+
+    const online = resources.map(item => {
+        if (item.type.includes('text/html')) return item.uri;
+        else return false;
+    }).filter(x => x !== false)
+
+
     const heartIconToggle = () => {
         if (favItems.filter(x => x.id === id).length > 0) return 'icon-heart'
         else return 'icon-heart-empty'
@@ -25,7 +32,7 @@ function Book({ id, title, resources, authors, desc }) {
 
     const favClickHandler = () => {
         if (favItems.filter(x => x.id === id).length > 0) return removeItems(id)
-        else return addItems(id, title, desc, author, imgSrc)
+        else return addItems(id, title, desc, author, imgSrc, online)
     }
 
 

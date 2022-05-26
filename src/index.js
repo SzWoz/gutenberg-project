@@ -6,6 +6,7 @@ import './styles/Nav/Navbar.css';
 import './styles/Home/Home.css';
 import './styles/main.css';
 import './styles/book-page/book-page.css'
+import './styles/favourite/favourite.css'
 import './styles/fontello/css/fontello.css';
 
 
