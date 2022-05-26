@@ -46,8 +46,28 @@ main .book .details .dropdown-wrapper {
   justify-content: center;
 }
 
+main .book .details .dropdown-wrapper h2 {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+}
+
+main .book .details .dropdown-wrapper h2 .arrow {
+  border: solid #44476A;
+  margin-left: .5rem;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: transform .3s;
+}
+
 main .book .details .dropdown-wrapper:hover .dropdown {
   display: block;
+}
+
+main .book .details .dropdown-wrapper:hover .arrow {
+  transform: rotate(-135deg);
 }
 
 main .book .details .dropdown-wrapper .dropdown {
@@ -59,10 +79,6 @@ main .book .details .dropdown-wrapper .dropdown {
   display: none;
   z-index: 10;
   margin-top: 2rem;
-}
-
-main .book .details .dropdown-wrapper .dropdown h2 {
-  flex-basis: 100%;
 }
 
 main .book .details .dropdown-wrapper .dropdown ul {

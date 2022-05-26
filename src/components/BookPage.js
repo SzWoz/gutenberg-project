@@ -75,7 +75,7 @@ const BookPage = () => {
                     {allAuthors}
 
                     <div className="dropdown-wrapper">
-                        <h2>Subjects</h2>
+                        <h2>Subjects <i className="arrow  right" /></h2>
                         <div className="dropdown">
                             <ul>
                                 {subjects}
