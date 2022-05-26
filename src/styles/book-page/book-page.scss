@@ -1,8 +1,141 @@
+@import "../variables/variables.scss";
+
+
 main {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .book {
-        width: 50%;
+        width: 60%;
+        height: 50vh;
+        display: flex;
+        box-shadow: 5px 5px 7px $shadow, -3px -3px 7px #fff;
+        border-radius: 20px;
+        position: relative;
+
+
+
+        img {
+            max-width: 60%;
+        }
+
+        .details {
+            display: flex;
+            flex-wrap: wrap;
+
+
+            h1 {
+                flex-basis: 70%;
+            }
+
+            h2 {
+                flex-basis: 100%;
+            }
+
+            p {
+                flex-basis: 30%;
+                text-align: end;
+            }
+
+            .dropdown-wrapper {
+                flex-basis: fit-content;
+                height: 2rem;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                justify-content: center;
+
+                &:hover {
+                    .dropdown {
+                        display: block;
+                    }
+                }
+
+
+                .dropdown {
+                    width: 50%;
+                    text-align: start;
+                    position: relative;
+                    text-align: center;
+                    position: absolute;
+                    display: none;
+                    z-index: 10;
+                    margin-top: 2rem;
+
+                    h2 {
+                        flex-basis: 100%;
+                    }
+
+                    ul {
+                        box-shadow: 5px 5px 7px $shadow, -3px -3px 7px #fff;
+                        list-style-type: none;
+                        border-radius: 20px;
+                        display: none;
+                        transition: opacity .3s ease-in-out;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        width: 100%;
+
+                        background-color: $bg;
+
+                        li {
+                            text-align: center;
+                            width: 100%;
+                        }
+                    }
+
+                    &:hover {
+                        ul {
+                            display: block;
+                        }
+                    }
+                }
+
+            }
+
+            .links {
+                flex-basis: 100%;
+                display: flex;
+                align-items: flex-end;
+
+                a {
+                    flex-basis: fit-content;
+                    margin: 0 0 1rem .5rem;
+                }
+
+            }
+
+
+            span {
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                right: .5rem;
+                bottom: .25rem;
+                cursor: pointer;
+                border: 1px solid $btn-border;
+                border-radius: 50%;
+                box-shadow: 5px 5px 7px $shadow, -3px -3px 7px #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    box-shadow: inset 2px 2px 5px $shadow, -3px -3px 7px #fff;
+
+                }
+
+                i {
+                    font-size: 1.5em;
+                    color: $accent;
+                }
+            }
+        }
+
+
     }
 }

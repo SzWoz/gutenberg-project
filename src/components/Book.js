@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import FavouriteContext from '../etc/FavouriteContext';
 
-export default function Book({ id, title, resources, authors, desc }) {
+function Book({ id, title, resources, authors, desc }) {
 
     const { favItems, addItems, removeItems } = useContext(FavouriteContext)
 
@@ -45,3 +45,4 @@ export default function Book({ id, title, resources, authors, desc }) {
     )
 }
 
+export default Book

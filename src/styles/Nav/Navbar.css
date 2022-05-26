@@ -59,6 +59,12 @@ nav ul li:first-child a {
   background-color: transparent;
   font-size: 1.5rem;
   color: #2a67eb;
+  box-shadow: 0 2px;
+  transition: box-shadow .2s ease-in-out;
+}
+
+nav ul li:first-child a:hover {
+  box-shadow: 0 0;
 }
 
 nav ul li:last-child {
