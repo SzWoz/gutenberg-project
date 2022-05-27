@@ -23,6 +23,7 @@ main .book img {
 
 main .book .details {
   display: flex;
+  flex-basis: 55%;
   flex-wrap: wrap;
 }
 
@@ -46,6 +47,7 @@ main .book .details .dropdown-wrapper {
   margin-right: auto;
   display: flex;
   justify-content: center;
+  cursor: default;
 }
 
 main .book .details .dropdown-wrapper h2 {
@@ -147,14 +149,14 @@ main .book .details span i {
   color: #2a67eb;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
   main .book {
     flex-basis: 90%;
     font-size: 2vw;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   main .book {
     height: auto;
     justify-content: center;
