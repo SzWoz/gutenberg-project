@@ -2,12 +2,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Nunito Sans';
   color: #44476A;
 }
 
 body {
   background-color: #e6e7ee;
+  font-size: 1.2vw;
 }
 /*# sourceMappingURL=main.css.map */
