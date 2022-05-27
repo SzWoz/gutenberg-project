@@ -2,12 +2,15 @@ import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
 import FavouriteContext from '../etc/FavouriteContext';
+import Loader from "./Loader";
 
 
 const BookPage = () => {
 
     const { id } = useParams()
     const [book, setBook] = useState([])
+    const [loading, setLoading] = useState()
+
     const { favItems, addItems, removeItems } = useContext(FavouriteContext)
 
     console.log(favItems)
@@ -16,10 +19,11 @@ const BookPage = () => {
 
     useEffect(() => {
         const getBookData = async () => {
-
+            setLoading(true)
             const res = await fetch(`https://gnikdroy.pythonanywhere.com/api/book/${id}`);
             const data = await res.json();
             setBook(data)
+            setLoading(false)
         }
         getBookData();
     }, [id])
@@ -66,41 +70,47 @@ const BookPage = () => {
 
     return (
         <main>
-            <div className="book">
-                <img src={imgSrc} alt="book cover" />
+            {loading ? <Loader /> :
 
-                <div className="details">
-                    <h1>{book.title}</h1>
-                    <p>Downloads: {book.downloads}</p>
+                <div className="book">
+                    <img src={imgSrc} alt="book cover" />
 
-                    {allAuthors}
+                    <div className="details">
+                        <h1>{book.title}</h1>
+                        <p>Downloads: {book.downloads}</p>
 
-                    <div className="dropdown-wrapper">
-                        <h2>Subjects <i className="arrow  right" /></h2>
-                        <div className="dropdown">
-                            <ul>
-                                {subjects}
-                            </ul>
-                        </div>
-                    </div>
+                        {allAuthors}
 
-                    <div className="links">
                         <div className="dropdown-wrapper">
-                            <h2>Description <i className="arrow  right" /></h2>
+                            <h2>Subjects <i className="arrow  right" /></h2>
                             <div className="dropdown">
-                                <p>{book.description !== null ? book.description : "Sadly there's no description yet :("}</p>
+                                <ul>
+                                    {subjects}
+                                </ul>
                             </div>
                         </div>
 
-                        <a href={online.length > 1 ? online[0] : online} target="_blank" rel="noreferrer">Read book online &#128241;</a>
+                        <div className="links">
+                            <div className="dropdown-wrapper">
+                                <h2>Description <i className="arrow  right" /></h2>
+                                <div className="dropdown">
+                                    <p>{book.description !== null ? book.description : "Sadly there's no description yet :("}</p>
+                                </div>
+                            </div>
+
+                            <a href={online.length > 1 ? online[0] : online} target="_blank" rel="noreferrer">Read book online &#128241;</a>
+                        </div>
+
+                        <span onClick={favClickHandler}><i className={heartIconToggle()}></i></span>
+
+
                     </div>
 
-                    <span onClick={favClickHandler}><i className={heartIconToggle()}></i></span>
+                </div >
+
+            }
 
 
-                </div>
-
-            </div >
         </main>
     )
 }
