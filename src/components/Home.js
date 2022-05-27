@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
+import Loader from "./Loader";
 
 
 
@@ -59,18 +60,24 @@ const Home = () => {
 
     return (
         <main>
-            <section>
-                <label htmlFor="search-bar">
-                    <input type="text" id="search-bar" placeholder="Search for books" onKeyDown={handleKeyDown} />
-                </label>
-            </section>
-            <section>
-                <div className="controls">
-                    <button onClick={handlePrevClick}>Previous</button>
-                    <button onClick={handleNextClick}>Next</button>
-                </div>
-                {loading ? 'loading' : books}
-            </section>
+
+            {
+                loading ? <Loader /> :
+                    <>
+                        <section>
+                            <label htmlFor="search-bar">
+                                <input type="text" id="search-bar" placeholder="Search for books" onKeyDown={handleKeyDown} />
+                            </label>
+                        </section>
+                        <section>
+                            <div className="controls">
+                                <button onClick={handlePrevClick}>Previous</button>
+                                <button onClick={handleNextClick}>Next</button>
+                            </div>
+                            {books}
+                        </section>
+                    </>
+            }
         </main>
     )
 }
