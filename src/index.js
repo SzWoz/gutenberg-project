@@ -5,8 +5,8 @@ import App from './App';
 import './styles/Nav/Navbar.css';
 import './styles/Home/Home.css';
 import './styles/main.css';
-import './styles/book-page/book-page.css'
-import './styles/favourite/favourite.css'
+import './styles/Book-page/book-page.css'
+import './styles/Favourite/favourite.css'
 import './styles/fontello/css/fontello.css';
 
 
