@@ -13,7 +13,6 @@ const Favourite = () => {
     const items = favItems.length !== 0 ? favItems.map(item => {
         return (
             <div className="book" key={nanoid()}>
-
                 <img src={item.img} alt="book cover" />
 
                 <div className="details">
@@ -24,11 +23,16 @@ const Favourite = () => {
                     </Link>
 
                     <div className="links">
-                        {
-                            item.description !== null ? <a href={item.desc} target="_blank" rel="noreferrer">Link to description &#128214;</a> : <p>Currently there's no book description</p>
-                        }
+                        <div className="dropdown-wrapper">
+                            <h2>Description <i className="arrow  right" /></h2>
+                            <div className="dropdown">
+                                <p>{item.desc !== null ? item.desc : "Sadly there's no description yet :("}</p>
+                            </div>
+                        </div>
                         <a href={item.ebook.length > 1 ? item.ebook[0] : item.ebook} target="_blank" rel="noreferrer">Read book online &#128241;</a>
                     </div>
+                    <span onClick={() => { removeItems(item.id) }}>X</span>
+
                 </div>
             </div >
         )

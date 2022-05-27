@@ -59,9 +59,6 @@ const Home = () => {
 
     return (
         <main>
-            <div className="carousel">
-                carousel
-            </div>
             <section>
                 <label htmlFor="search-bar">
                     <input type="text" id="search-bar" placeholder="Search for books" onKeyDown={handleKeyDown} />

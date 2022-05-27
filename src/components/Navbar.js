@@ -6,10 +6,10 @@ const Navbar = () => {
         <nav>
             <ul>
                 <li><NavLink to="/">Project Gutenber</NavLink></li>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/favourite">fav</NavLink></li>
+                <li><NavLink to="/favourite"><span><i className="icon-heart"></i></span>
+                </NavLink></li>
             </ul>
-        </nav>
+        </nav >
     )
 }
 

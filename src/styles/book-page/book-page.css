@@ -1,25 +1,17 @@
 main {
   width: 100%;
   height: calc(100vh - 50px);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 main .book {
   width: 50%;
-  height: 35vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: auto;
   display: flex;
-  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+  flex-wrap: wrap;
+  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   border-radius: 20px;
   position: relative;
   margin: 2rem 0 2rem 0;
@@ -30,53 +22,36 @@ main .book img {
 }
 
 main .book .details {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 main .book .details h1 {
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  flex-basis: 70%;
 }
 
 main .book .details h2 {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 main .book .details p {
-  -ms-flex-preferred-size: 28%;
-      flex-basis: 28%;
+  flex-basis: 28%;
   text-align: end;
 }
 
 main .book .details .dropdown-wrapper {
-  -ms-flex-preferred-size: fit-content;
-      flex-basis: fit-content;
+  flex-basis: fit-content;
   height: 2rem;
   margin-left: auto;
   margin-right: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: -2rem;
+  justify-content: center;
 }
 
 main .book .details .dropdown-wrapper h2 {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-basis: 100%;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 main .book .details .dropdown-wrapper h2 .arrow {
@@ -85,12 +60,8 @@ main .book .details .dropdown-wrapper h2 .arrow {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
+  transform: rotate(45deg);
   transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
 }
 
 main .book .details .dropdown-wrapper:hover .dropdown {
@@ -98,14 +69,12 @@ main .book .details .dropdown-wrapper:hover .dropdown {
 }
 
 main .book .details .dropdown-wrapper:hover .arrow {
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
 main .book .details .dropdown-wrapper .dropdown {
   width: 50%;
   text-align: start;
-  position: relative;
   text-align: center;
   position: absolute;
   display: none;
@@ -113,27 +82,26 @@ main .book .details .dropdown-wrapper .dropdown {
   margin-top: 2rem;
 }
 
-main .book .details .dropdown-wrapper .dropdown ul {
-  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+main .book .details .dropdown-wrapper .dropdown p {
+  text-align: center;
+}
+
+main .book .details .dropdown-wrapper .dropdown ul,
+main .book .details .dropdown-wrapper .dropdown p {
+  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   list-style-type: none;
   border-radius: 20px;
   display: none;
-  -webkit-transition: opacity .3s ease-in-out;
   transition: opacity .3s ease-in-out;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   background-color: #e6e7ee;
 }
 
-main .book .details .dropdown-wrapper .dropdown ul li {
+main .book .details .dropdown-wrapper .dropdown ul li,
+main .book .details .dropdown-wrapper .dropdown p li {
   text-align: center;
   width: 100%;
 }
@@ -143,27 +111,15 @@ main .book .details .dropdown-wrapper .dropdown:hover ul {
 }
 
 main .book .details .links {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-basis: 100%;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 
 main .book .details .links a {
-  -ms-flex-preferred-size: fit-content;
-      flex-basis: fit-content;
+  flex-basis: fit-content;
   margin: 0 0 1rem .5rem;
-}
-
-main .book .details .links p {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  text-align: start;
-  margin: 0 0 1rem .5rem;
+  text-decoration: none;
 }
 
 main .book .details span {
@@ -175,26 +131,49 @@ main .book .details span {
   cursor: pointer;
   border: 1px solid #D1D9E6;
   border-radius: 50%;
-  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 }
 
 main .book .details span:hover {
-  -webkit-box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
+  box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
 }
 
 main .book .details span i {
   font-size: 1.5em;
   color: #2a67eb;
+}
+
+@media only screen and (max-width: 800px) {
+  main .book {
+    flex-basis: 90%;
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main .book {
+    height: auto;
+    justify-content: center;
+    font-size: 3vw;
+  }
+  main .book .details {
+    flex-basis: 100%;
+  }
+  main .book .details .dropdown-wrapper {
+    margin: 0 auto 0 auto;
+  }
+  main .book .details .links {
+    margin-top: 1rem;
+  }
+  main .book .details .links .dropdown-wrapper {
+    flex-basis: 51%;
+  }
+  main .book .details .links a {
+    flex-basis: 51%;
+  }
 }
 /*# sourceMappingURL=book-page.css.map */

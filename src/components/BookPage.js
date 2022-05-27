@@ -49,6 +49,7 @@ const BookPage = () => {
         return <li key={nanoid()}>{element}</li>
     }) : '';
 
+    // const descriptionCheck = book.length !== 0 ? book.description.filter() : '';
 
     const heartIconToggle = () => {
         console.log('gowno')
@@ -84,9 +85,12 @@ const BookPage = () => {
                     </div>
 
                     <div className="links">
-                        {
-                            book.description !== null ? <a href={book.description} target="_blank" rel="noreferrer">Link to description &#128214;</a> : <p>Currently there's no book description</p>
-                        }
+                        <div className="dropdown-wrapper">
+                            <h2>Description <i className="arrow  right" /></h2>
+                            <div className="dropdown">
+                                <p>{book.description !== null ? book.description : "Sadly there's no description yet :("}</p>
+                            </div>
+                        </div>
 
                         <a href={online.length > 1 ? online[0] : online} target="_blank" rel="noreferrer">Read book online &#128241;</a>
                     </div>
