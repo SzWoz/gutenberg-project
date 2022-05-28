@@ -66,11 +66,11 @@ main .book .details .dropdown-wrapper h2 .arrow {
   transition: transform .3s;
 }
 
-main .book .details .dropdown-wrapper:hover .dropdown {
+main .book .details .dropdown-wrapper:hover .dropdown, main .book .details .dropdown-wrapper:focus .dropdown {
   display: block;
 }
 
-main .book .details .dropdown-wrapper:hover .arrow {
+main .book .details .dropdown-wrapper:hover .arrow, main .book .details .dropdown-wrapper:focus .arrow {
   transform: rotate(-135deg);
 }
 
@@ -108,7 +108,7 @@ main .book .details .dropdown-wrapper .dropdown p li {
   width: 100%;
 }
 
-main .book .details .dropdown-wrapper .dropdown:hover ul {
+main .book .details .dropdown-wrapper .dropdown:hover ul, main .book .details .dropdown-wrapper .dropdown:focus ul {
   display: block;
 }
 

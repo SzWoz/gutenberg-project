@@ -4,6 +4,7 @@ main .favourite-wrapper {
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 main .favourite-wrapper .book {
