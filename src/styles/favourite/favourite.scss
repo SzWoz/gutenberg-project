@@ -78,6 +78,10 @@ main {
         .favourite-wrapper {
             flex-basis: 90%;
             font-size: 2vw;
+
+            .book{
+                flex-basis: 100%;
+            }
         }
     }
 }

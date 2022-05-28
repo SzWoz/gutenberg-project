@@ -1,20 +1,29 @@
 main {
   width: 100%;
   height: calc(100vh - 50px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .book {
   width: 50%;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   border-radius: 20px;
   position: relative;
   margin: 2rem 0 2rem 0;
+  padding: 1rem;
 }
 
 main .book img {
@@ -22,38 +31,55 @@ main .book img {
 }
 
 main .book .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-basis: 55%;
-  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .book .details h1 {
-  flex-basis: 70%;
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
 }
 
 main .book .details h2 {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 main .book .details p {
-  flex-basis: 28%;
+  -ms-flex-preferred-size: 28%;
+      flex-basis: 28%;
   text-align: end;
 }
 
 main .book .details .dropdown-wrapper {
-  flex-basis: fit-content;
-  height: 2rem;
+  -ms-flex-preferred-size: fit-content;
+      flex-basis: fit-content;
   margin-left: auto;
   margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: default;
 }
 
 main .book .details .dropdown-wrapper h2 {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .book .details .dropdown-wrapper h2 .arrow {
@@ -62,8 +88,12 @@ main .book .details .dropdown-wrapper h2 .arrow {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
   transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
 }
 
 main .book .details .dropdown-wrapper:hover .dropdown, main .book .details .dropdown-wrapper:focus .dropdown {
@@ -71,7 +101,8 @@ main .book .details .dropdown-wrapper:hover .dropdown, main .book .details .drop
 }
 
 main .book .details .dropdown-wrapper:hover .arrow, main .book .details .dropdown-wrapper:focus .arrow {
-  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 
 main .book .details .dropdown-wrapper .dropdown {
@@ -90,14 +121,21 @@ main .book .details .dropdown-wrapper .dropdown p {
 
 main .book .details .dropdown-wrapper .dropdown ul,
 main .book .details .dropdown-wrapper .dropdown p {
-  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   list-style-type: none;
   border-radius: 20px;
   display: none;
+  -webkit-transition: opacity .3s ease-in-out;
   transition: opacity .3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   background-color: #e6e7ee;
 }
@@ -118,57 +156,81 @@ main .book .details .dropdown-wrapper .dropdown:hover ul, main .book .details .d
 }
 
 main .book .details .links {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main .book .details .links a {
-  flex-basis: fit-content;
-  margin: 0 0 1rem .5rem;
+  -ms-flex-preferred-size: fit-content;
+      flex-basis: fit-content;
   text-decoration: none;
+  font-size: 1.5vw;
 }
 
-main .book .details span {
-  width: 3rem;
+main .book .details .links span {
+  min-width: 3rem;
   height: 3rem;
-  position: absolute;
-  right: .5rem;
-  bottom: .25rem;
+  margin: 0 0 0 1.5rem;
   cursor: pointer;
   border: 1px solid #D1D9E6;
   border-radius: 50%;
-  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1.2rem;
 }
 
-main .book .details span:hover {
-  box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
+main .book .details .links span:hover {
+  -webkit-box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
+          box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
 }
 
-main .book .details span i {
+main .book .details .links span i {
   font-size: 1.5em;
   color: #2a67eb;
 }
 
 @media only screen and (max-width: 1100px) {
   main .book {
-    flex-basis: 90%;
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
     font-size: 2vw;
+  }
+  main .book .details .links a {
+    font-size: 2.5vw;
   }
 }
 
 @media only screen and (max-width: 600px) {
   main .book {
     height: auto;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 3vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   main .book .details {
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
   main .book .details .dropdown-wrapper {
     margin: 0 auto 0 auto;
@@ -177,10 +239,13 @@ main .book .details span i {
     margin-top: 1rem;
   }
   main .book .details .links .dropdown-wrapper {
-    flex-basis: 51%;
+    -ms-flex-preferred-size: 51%;
+        flex-basis: 51%;
   }
   main .book .details .links a {
-    flex-basis: 51%;
+    -ms-flex-preferred-size: 51%;
+        flex-basis: 51%;
+    font-size: 3.5vw;
   }
 }
 /*# sourceMappingURL=book-page.css.map */

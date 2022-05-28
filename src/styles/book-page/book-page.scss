@@ -12,11 +12,12 @@ main {
         width: 50%;
         height: auto;
         display: flex;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         box-shadow: 5px 5px 7px $shadow, -3px -3px 7px #fff;
         border-radius: 20px;
         position: relative;
         margin: 2rem 0 2rem 0;
+        padding: 1rem;
 
         img {
             max-width: 60%;
@@ -24,7 +25,7 @@ main {
 
         .details {
             display: flex;
-            flex-basis: 55%;
+            flex-grow: 1;
             flex-wrap: wrap;
 
 
@@ -43,7 +44,6 @@ main {
 
             .dropdown-wrapper {
                 flex-basis: fit-content;
-                height: 2rem;
                 margin-left: auto;
                 margin-right: auto;
                 display: flex;
@@ -131,42 +131,43 @@ main {
                 flex-basis: 100%;
                 display: flex;
                 align-items: flex-end;
+                justify-content: space-between;
 
                 a {
                     flex-basis: fit-content;
-                    margin: 0 0 1rem .5rem;
                     text-decoration: none;
+                    font-size: 1.5vw;
+                }
+
+                span {
+                    min-width: 3rem;
+                    height: 3rem;
+                    margin: 0 0 0 1.5rem;
+                    cursor: pointer;
+                    border: 1px solid $btn-border;
+                    border-radius: 50%;
+                    box-shadow: 5px 5px 7px $shadow, -3px -3px 7px #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+    
+    
+                    &:hover {
+                        box-shadow: inset 2px 2px 5px $shadow, -3px -3px 7px #fff;
+    
+                    }
+    
+                    i {
+                        font-size: 1.5em;
+                        color: $accent;
+                    }
                 }
 
             }
 
 
-            span {
-                width: 3rem;
-                height: 3rem;
-                position: absolute;
-                right: .5rem;
-                bottom: .25rem;
-                cursor: pointer;
-                border: 1px solid $btn-border;
-                border-radius: 50%;
-                box-shadow: 5px 5px 7px $shadow, -3px -3px 7px #fff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 1.2rem;
-
-
-                &:hover {
-                    box-shadow: inset 2px 2px 5px $shadow, -3px -3px 7px #fff;
-
-                }
-
-                i {
-                    font-size: 1.5em;
-                    color: $accent;
-                }
-            }
+            
         }
 
 
@@ -179,6 +180,14 @@ main {
             flex-basis: 90%;
             font-size: 2vw;
 
+            
+            .details{
+                .links{
+                    a{
+                    font-size:2.5vw;
+                    }
+                }
+            }
         }
     }
 }
@@ -189,6 +198,7 @@ main {
             height: auto;
             justify-content: center;
             font-size: 3vw;
+            flex-wrap: wrap;
 
             .details {
                 flex-basis: 100%;
@@ -207,6 +217,7 @@ main {
 
                     a {
                         flex-basis: 51%;
+                        font-size: 3.5vw;
                     }
                 }
             }

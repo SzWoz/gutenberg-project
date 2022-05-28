@@ -97,9 +97,11 @@ const BookPage = () => {
                             </div>
 
                             <a href={online.length > 1 ? online[0] : online} target="_blank" rel="noreferrer">Read book online &#128241;</a>
+                        
+                            <span onClick={favClickHandler}><i className={heartIconToggle()}></i></span>
+                        
                         </div>
 
-                        <span onClick={favClickHandler}><i className={heartIconToggle()}></i></span>
 
 
                     </div>

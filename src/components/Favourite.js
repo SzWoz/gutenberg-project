@@ -30,8 +30,9 @@ const Favourite = () => {
                             </div>
                         </div>
                         <a href={item.ebook.length > 1 ? item.ebook[0] : item.ebook} target="_blank" rel="noreferrer">Read book online &#128241;</a>
+                        <span onClick={() => { removeItems(item.id) }}>X</span>
+                    
                     </div>
-                    <span onClick={() => { removeItems(item.id) }}>X</span>
 
                 </div>
             </div >
