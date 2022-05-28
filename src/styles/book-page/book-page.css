@@ -102,6 +102,11 @@ main .book .details .dropdown-wrapper .dropdown p {
   background-color: #e6e7ee;
 }
 
+main .book .details .dropdown-wrapper .dropdown ul a,
+main .book .details .dropdown-wrapper .dropdown p a {
+  margin: 1rem 0 1rem 0;
+}
+
 main .book .details .dropdown-wrapper .dropdown ul li,
 main .book .details .dropdown-wrapper .dropdown p li {
   text-align: center;
