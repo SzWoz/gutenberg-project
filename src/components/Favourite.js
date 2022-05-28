@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
+import { nanoid } from 'nanoid';
 import { Link } from 'react-router-dom'
 import FavouriteContext from '../etc/FavouriteContext';
 
