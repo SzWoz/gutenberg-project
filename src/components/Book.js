@@ -42,7 +42,7 @@ function Book({ id, title, resources, authors, desc }) {
         <article>
             <img src={imgSrc} alt="book cover" />
             <div className="details">
-                <Link to={`book/${id}`}>
+                <Link to={`/gutenberg-project/book/${id}`}>
                     <h2>{title}</h2>
                 </Link>
                 {allAuthors}

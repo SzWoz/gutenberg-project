@@ -14,9 +14,9 @@ function App() {
       <FavouriteProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favourite" element={<Favourite />} />
-          <Route path='/book/:id' element={< BookPage />} />
+          <Route path="/gutenberg-project" element={<Home />} />
+          <Route path="/gutenberg-project/favourite" element={<Favourite />} />
+          <Route path='/gutenberg-project/book/:id' element={< BookPage />} />
         </Routes>
       </FavouriteProvider>
     </div>

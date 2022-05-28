@@ -16,7 +16,7 @@ const Favourite = () => {
                 <img src={item.img} alt="book cover" />
 
                 <div className="details">
-                    <Link to={`/book/${item.id}`}>
+                    <Link to={`/gutenberg-project/book/${item.id}`}>
 
                         <h1>{item.title}</h1>
                         <h2>{item.author[0].person}</h2>
