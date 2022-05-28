@@ -55,6 +55,10 @@ main {
                             justify-content: center;
                             width: 100%;
                             background-color: $bg;
+
+                            a {
+                                margin: 0;
+                            }
                         }
 
                     }

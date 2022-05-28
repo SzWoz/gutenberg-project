@@ -50,6 +50,10 @@ main .favourite-wrapper .book .details .links .dropdown p {
   background-color: #e6e7ee;
 }
 
+main .favourite-wrapper .book .details .links .dropdown p a {
+  margin: 0;
+}
+
 @media only screen and (max-width: 1100px) {
   main .favourite-wrapper {
     flex-basis: 90%;
