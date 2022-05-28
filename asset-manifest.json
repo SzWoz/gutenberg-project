@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gutenberg-project/static/css/main.e4e1dcca.css",
-    "main.js": "/gutenberg-project/static/js/main.c520ff39.js",
+    "main.js": "/gutenberg-project/static/js/main.b8c89f34.js",
     "static/media/fontello.eot?3450461": "/gutenberg-project/static/media/fontello.8e4a31ee3b417fffa4ab.eot",
     "static/media/fontello.ttf?3450461": "/gutenberg-project/static/media/fontello.2bb2c5a5f23f6b1f013f.ttf",
     "static/media/fontello.woff?3450461": "/gutenberg-project/static/media/fontello.d7cb8037650f3299ba02.woff",
@@ -9,10 +9,10 @@
     "static/media/fontello.svg?3450461": "/gutenberg-project/static/media/fontello.1c0e8f70b3f2da416ee3.svg",
     "index.html": "/gutenberg-project/index.html",
     "main.e4e1dcca.css.map": "/gutenberg-project/static/css/main.e4e1dcca.css.map",
-    "main.c520ff39.js.map": "/gutenberg-project/static/js/main.c520ff39.js.map"
+    "main.b8c89f34.js.map": "/gutenberg-project/static/js/main.b8c89f34.js.map"
   },
   "entrypoints": [
     "static/css/main.e4e1dcca.css",
-    "static/js/main.c520ff39.js"
+    "static/js/main.b8c89f34.js"
   ]
 }
