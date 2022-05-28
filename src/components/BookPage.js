@@ -13,7 +13,7 @@ const BookPage = () => {
 
     const { favItems, addItems, removeItems } = useContext(FavouriteContext)
 
-    console.log(favItems)
+
 
 
 
@@ -53,10 +53,8 @@ const BookPage = () => {
         return <li key={nanoid()}>{element}</li>
     }) : '';
 
-    // const descriptionCheck = book.length !== 0 ? book.description.filter() : '';
 
     const heartIconToggle = () => {
-        console.log('gowno')
         if (favItems.filter(x => x.id === book.id).length > 0) return 'icon-heart'
         else return 'icon-heart-empty'
     }
@@ -67,7 +65,7 @@ const BookPage = () => {
     }
 
 
-
+    console.log(book)
     return (
         <main>
             {loading ? <Loader /> :
@@ -94,7 +92,7 @@ const BookPage = () => {
                             <div className="dropdown-wrapper">
                                 <h2>Description <i className="arrow  right" /></h2>
                                 <div className="dropdown">
-                                    <p>{book.description !== null ? book.description : "Sadly there's no description yet :("}</p>
+                                    <p>{book.description !== null && book.description !== undefined ? book.description.includes('http') ? <a href={book.description} target="_blank" rel="noreferrer">Link to external description</a> : book.description : "Sadly there's no description yet :("}</p>
                                 </div>
                             </div>
 

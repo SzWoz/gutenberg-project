@@ -26,7 +26,6 @@ const Home = () => {
 
         apiCall()
     }, [newCall])
-    console.log(booksData)
     //handling prev and next btns calls
     const handleNextClick = () => {
         if (booksData.next !== null) {

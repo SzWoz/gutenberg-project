@@ -6,7 +6,7 @@ import FavouriteContext from '../etc/FavouriteContext';
 
 const Favourite = () => {
 
-    const { favItems, addItems, removeItems } = useContext(FavouriteContext)
+    const { favItems, removeItems } = useContext(FavouriteContext)
 
 
 
@@ -26,7 +26,7 @@ const Favourite = () => {
                         <div className="dropdown-wrapper">
                             <h2>Description <i className="arrow  right" /></h2>
                             <div className="dropdown">
-                                <p>{item.desc !== null ? item.desc : "Sadly there's no description yet :("}</p>
+                                <p>{item.desc !== null ? item.desc.includes('http') ? <a href={item.desc} target="_blank" rel="noreferrer">Link to external description</a> : item.desc : "Sadly there's no description yet :("}</p>
                             </div>
                         </div>
                         <a href={item.ebook.length > 1 ? item.ebook[0] : item.ebook} target="_blank" rel="noreferrer">Read book online &#128241;</a>
