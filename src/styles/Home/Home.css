@@ -1,38 +1,23 @@
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 main .carousel {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 main section {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-basis: 100%;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 main section .controls {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  padding: 0 40% 0 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-basis: 60%;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   height: 3rem;
 }
 
@@ -40,65 +25,54 @@ main section .controls button {
   width: 5rem;
   height: 2rem;
   cursor: pointer;
-  background-color: #e6e7ee;
+  background-color: #5e8ef8;
   border-radius: 10px;
   border: 1px solid #D1D9E6;
-  -webkit-box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
-          box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+  color: #fff;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+}
+
+main section .controls button.current {
+  box-shadow: inset 3px 3px 5px #03598b, -3px -3px 7px #fff;
 }
 
 main section .controls button:hover {
-  -webkit-box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
+  box-shadow: inset 3px 3px 5px #03598b, -3px -3px 7px #fff;
 }
 
 main section article {
-  -ms-flex-preferred-size: 35%;
-      flex-basis: 35%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-basis: 40%;
+  min-height: 200px;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  max-height: 35vh;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   margin: 1rem 2rem 1rem 2rem;
   border: 1px solid #D1D9E6;
   border-radius: 20px;
-  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
+  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   position: relative;
 }
 
 main section article img {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  max-height: 25vh;
+  transform: scale(0.8);
+  max-height: 200px;
+  max-width: 50%;
 }
 
 main section article .details {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-basis: 50%;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   height: 80%;
 }
 
 main section article .details h2 {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 main section article .details h3 {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 main section article .details span {
@@ -110,24 +84,16 @@ main section article .details span {
   cursor: pointer;
   border: 1px solid #D1D9E6;
   border-radius: 50%;
-  -webkit-box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-shadow: 5px 5px 7px #b8b9be, -3px -3px 7px #fff;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: #e6e7ee;
   font-size: 1.2rem;
 }
 
 main section article .details span:hover {
-  -webkit-box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
-          box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
+  box-shadow: inset 2px 2px 5px #b8b9be, -3px -3px 7px #fff;
 }
 
 main section article .details span i {
@@ -140,83 +106,83 @@ main section article .details a {
 }
 
 main section article span {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 main section:first-of-type {
   height: 20vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+main section:first-of-type label {
+  width: 50%;
 }
 
 main section:first-of-type label input {
-  width: 35vw;
-  height: 2rem;
+  width: 100%;
+  height: 3rem;
   outline: none;
   border: 1px solid #D1D9E6;
   border-radius: 20px;
-  background-color: #e6e7ee;
-  -webkit-box-shadow: inset 3px 3px 5px #b8b9be, inset -2px -2px 7px #fff;
-          box-shadow: inset 3px 3px 5px #b8b9be, inset -2px -2px 7px #fff;
+  background-color: #5e8ef8;
+  color: #fff;
+  box-shadow: inset 3px 3px 5px #2a67eb, inset -1px -1px 7px #fff;
   padding: 0 1rem 0 1rem;
+  font-size: 1.25rem;
+}
+
+main section:first-of-type label input:focus {
+  box-shadow: inset 3px 3px 5px #03598b, -3px -3px 7px #fff;
+}
+
+main section:first-of-type label input::placeholder {
+  color: #fff;
 }
 
 @media only screen and (max-width: 1100px) {
   main section:first-of-type {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   main section:first-of-type label {
-    -ms-flex-preferred-size: 60%;
-        flex-basis: 60%;
+    flex-basis: 80%;
   }
   main section:first-of-type label input {
     width: 100%;
   }
   main section .controls {
-    -ms-flex-preferred-size: 60%;
-        flex-basis: 60%;
+    flex-basis: 80%;
     padding: 0;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   main section article {
     font-size: 1.5vw;
-    -ms-flex-preferred-size: 60%;
-        flex-basis: 60%;
+    flex-basis: 60%;
   }
 }
 
 @media only screen and (max-width: 600px) {
   main section:first-of-type {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   main section:first-of-type label {
-    -ms-flex-preferred-size: 90%;
-        flex-basis: 90%;
+    flex-basis: 90%;
   }
   main section:first-of-type label input {
     width: 100%;
   }
   main section .controls {
-    -ms-flex-preferred-size: 80%;
-        flex-basis: 80%;
+    flex-basis: 100%;
     padding: 0;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
+  }
+  main section .controls button {
+    width: 4rem;
+    height: 2rem;
   }
   main section article {
     font-size: 2.5vw;
-    -ms-flex-preferred-size: 90%;
-        flex-basis: 90%;
+    flex-basis: 90%;
   }
 }
 /*# sourceMappingURL=Home.css.map */

@@ -15,7 +15,8 @@ const Home = () => {
 
     const { count, addCount, subtractCount, resetCount } = useContext(CountContext)
 
-    const [searched, setSearched] = useState('')
+    const [searched, setSearched] = useState('');
+    const [searchBar, setSearchBar] = useState('')
 
     useEffect(() => {
         if (searched === '') {
@@ -50,6 +51,7 @@ const Home = () => {
     const handleSearch = (e) => {
         const value = e.target.value
         setSearched(value.replace(/\s+/g, '+'))
+        setSearchBar(value)
         resetCount()
     }
 
@@ -84,14 +86,14 @@ const Home = () => {
                     <>
                         <section>
                             <label htmlFor="search-bar">
-                                <input type="search" id="search-bar" value={searched} placeholder="Search for books" onChange={handleSearch} />
+                                <input type="search" id="search-bar" value={searchBar} placeholder="Search for books" onChange={handleSearch} />
                             </label>
                         </section>
                         <section>
                             <div className="controls">
                                 <button value={count - 1} onClick={(e) => btnchk(e)}>Previous</button>
                                 {count > 1 ? <button value={count - 1} onClick={(e) => btnchk(e)}>{count - 1}</button> : ""}
-                                <button >{count}</button>
+                                <button className="current" >{count}</button>
                                 <button value={count + 1} onClick={(e) => btnchk(e)}>{count + 1}</button>
                                 <button value={count + 2} onClick={(e) => btnchk(e)}>{count + 2}</button>
                                 <button value={count + 1} onClick={(e) => btnchk(e)}>Next</button>

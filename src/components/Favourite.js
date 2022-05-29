@@ -30,8 +30,8 @@ const Favourite = () => {
                             </div>
                         </div>
                         <a href={item.ebook.length > 1 ? item.ebook[0] : item.ebook} target="_blank" rel="noreferrer">Read book online &#128241;</a>
-                        <span onClick={() => { removeItems(item.id) }}>X</span>
-                    
+                        <span onClick={() => { removeItems(item.id) }}><i className='icon-heart'></i><p>X</p></span>
+
                     </div>
 
                 </div>
@@ -43,6 +43,7 @@ const Favourite = () => {
     return (
         <main>
             <div className="favourite-wrapper">
+                <Link className='get-back' to="/gutenberg-project">Return</Link>
                 {items}
             </div>
         </main>

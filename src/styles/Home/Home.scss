@@ -16,8 +16,7 @@ main {
         justify-content: center;
 
         .controls {
-            flex-basis: 100%;
-            padding: 0 40% 0 40%;
+            flex-basis: 60%;
             display: flex;
             justify-content: space-around;
             height: 3rem;
@@ -29,21 +28,26 @@ main {
                 background-color: $btn-bg;
                 border-radius: 10px;
                 border: 1px solid $btn-border;
+                color: #fff;
                 box-shadow: 3px 3px 6px $shadow, -3px -3px 6px #fff;
 
+                &.current {
+                    box-shadow: inset 3px 3px 5px rgb(3, 89, 139), -3px -3px 7px #fff;
+                }
+
                 &:hover {
-                    box-shadow: inset 2px 2px 5px $shadow, -3px -3px 7px #fff;
+                    box-shadow: inset 3px 3px 5px rgb(3, 89, 139), -3px -3px 7px #fff;
                 }
             }
         }
 
         article {
-            flex-basis: 35%;
+            flex-basis: 40%;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: space-around;
             flex-wrap: wrap;
-            max-height: 35vh;
             margin: 1rem 2rem 1rem 2rem;
             border: 1px solid $btn-border;
             border-radius: 20px;
@@ -53,7 +57,8 @@ main {
 
             img {
                 transform: scale(.8);
-                max-height: 25vh;
+                max-height: 200px;
+                max-width: 50%;
             }
 
             .details {
@@ -116,16 +121,28 @@ main {
             align-items: center;
 
             label {
+                width: 50%;
 
                 input {
-                    width: 35vw;
-                    height: 2rem;
+                    width: 100%;
+                    height: 3rem;
                     outline: none;
                     border: 1px solid $btn-border;
                     border-radius: 20px;
-                    background-color: $bg;
-                    box-shadow: inset 3px 3px 5px $shadow, inset -2px -2px 7px #fff;
+                    background-color: $btn-bg;
+                    color: #fff;
+                    box-shadow: inset 3px 3px 5px $accent, inset -1px -1px 7px #fff;
                     padding: 0 1rem 0 1rem;
+                    font-size: 1.25rem;
+
+                    &:focus {
+                        box-shadow: inset 3px 3px 5px rgb(3, 89, 139), -3px -3px 7px #fff;
+
+                    }
+
+                    &::placeholder {
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -139,7 +156,7 @@ main {
             flex-basis: 100%;
 
             label {
-                flex-basis: 60%;
+                flex-basis: 80%;
 
                 input {
                     width: 100%;
@@ -149,7 +166,7 @@ main {
 
         section {
             .controls {
-                flex-basis: 60%;
+                flex-basis: 80%;
                 padding: 0;
                 justify-content: space-between;
 
@@ -180,10 +197,14 @@ main {
 
         section {
             .controls {
-                flex-basis: 80%;
+                flex-basis: 100%;
                 padding: 0;
                 justify-content: space-between;
 
+                button {
+                    width: 4rem;
+                    height: 2rem;
+                }
             }
 
             article {
