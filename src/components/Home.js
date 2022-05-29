@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { nanoid } from 'nanoid';
 
 
-import Loader from "./Loader";
 import Book from './Book'
 import CountContext from "../etc/CountContext";
 

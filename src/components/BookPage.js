@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { nanoid } from 'nanoid';
 import FavouriteContext from '../etc/FavouriteContext';
-import Loader from "./Loader";
 
 
 const BookPage = () => {
@@ -67,14 +66,13 @@ const BookPage = () => {
 
     return (
         <main>
-            <Link className="get-back" to="/gutenberg-project">Return</Link>
+            <Link className="get-back" to="/">Return</Link>
 
             {loading ?
                 <div className="loader">
                     <span></span>
                     <span></span>
                 </div>
-
                 :
 
                 <div className="book">

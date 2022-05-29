@@ -48,7 +48,7 @@ function Book({ id, title, resources, authors, desc }) {
         <article>
             <img src={imgSrc} alt="book cover" />
             <div className="details">
-                <Link to={`/gutenberg-project/book/${id}`}>
+                <Link to={`book/${id}`}>
                     <h2 title={title.length > 35 ? title : ''}>{titleLengthChk(title)}</h2>
                 </Link>
                 {allAuthors}

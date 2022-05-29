@@ -16,7 +16,7 @@ const Favourite = () => {
                 <img src={item.img} alt="book cover" />
 
                 <div className="details">
-                    <Link to={`/gutenberg-project/book/${item.id}`}>
+                    <Link to={`book/${item.id}`}>
 
                         <h1>{item.title}</h1>
                         <h2>{item.author[0].person}</h2>
@@ -43,7 +43,7 @@ const Favourite = () => {
     return (
         <main>
             <div className="favourite-wrapper">
-                <Link className='get-back' to="/gutenberg-project">Return</Link>
+                <Link className='get-back' to="/">Return</Link>
                 {items}
             </div>
         </main>

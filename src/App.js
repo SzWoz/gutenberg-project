@@ -16,9 +16,9 @@ function App() {
         <CountProvider>
           <Navbar />
           <Routes>
-            <Route path="/gutenberg-project" element={<Home />} />
-            <Route path="/gutenberg-project/favourite" element={<Favourite />} />
-            <Route path='/gutenberg-project/book/:id' element={< BookPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/favourite" element={<Favourite />} />
+            <Route path='/book/:id' element={< BookPage />} />
           </Routes>
         </CountProvider>
       </FavouriteProvider>
