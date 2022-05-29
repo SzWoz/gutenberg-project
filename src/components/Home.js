@@ -82,7 +82,12 @@ const Home = () => {
         <main>
 
             {
-                loading ? <Loader /> :
+                loading ?
+                    <div className="loader">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    :
                     <>
                         <section>
                             <label htmlFor="search-bar">

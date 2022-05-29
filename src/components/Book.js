@@ -17,7 +17,6 @@ function Book({ id, title, resources, authors, desc }) {
     const allAuthors = author.map(item => {
         const name = item.person;
         const correctOrder = name.split(',').reverse();
-        console.log(correctOrder)
         return <h3 key={nanoid()}>{correctOrder.map(item => { return item + ' ' })}</h3>
     })
 

@@ -38,7 +38,6 @@ const BookPage = () => {
 
     const author = book.length !== 0 ? book.agents.filter(a => a.type === 'Author') : ''
 
-    console.log(author)
     const allAuthors = book.length !== 0 ? author.map(item => {
         return <h2 key={nanoid()}>{item.person}</h2>
     }) : ''
@@ -70,7 +69,13 @@ const BookPage = () => {
         <main>
             <Link className="get-back" to="/gutenberg-project">Return</Link>
 
-            {loading ? <Loader /> :
+            {loading ?
+                <div className="loader">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                :
 
                 <div className="book">
 
