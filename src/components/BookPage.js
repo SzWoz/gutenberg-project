@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { nanoid } from 'nanoid';
 import FavouriteContext from '../etc/FavouriteContext';
 import Loader from "./Loader";
@@ -67,9 +67,12 @@ const BookPage = () => {
 
     return (
         <main>
+            <Link to="/gutenberg-project">back</Link>
+
             {loading ? <Loader /> :
 
                 <div className="book">
+
                     <img src={imgSrc} alt="book cover" />
 
                     <div className="details">

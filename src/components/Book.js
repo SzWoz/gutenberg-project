@@ -15,8 +15,14 @@ function Book({ id, title, resources, authors, desc }) {
     const author = authors.filter(a => a.type === 'Author')
 
     const allAuthors = author.map(item => {
-        return <h3 key={nanoid()}>{item.person}</h3>
+        const name = item.person;
+        const correctOrder = name.split(',')
+        return <h3 key={nanoid()}>{correctOrder[1] + ' ' + correctOrder[0]}</h3>
     })
+
+    const titleLengthChk = (title) => {
+        return (title.length > 35) ? title.substr(0, 29) + '...' : title;
+    }
 
 
     const online = resources.map(item => {
@@ -43,7 +49,7 @@ function Book({ id, title, resources, authors, desc }) {
             <img src={imgSrc} alt="book cover" />
             <div className="details">
                 <Link to={`/gutenberg-project/book/${id}`}>
-                    <h2>{title}</h2>
+                    <h2 title={title.length > 35 ? title : ''}>{titleLengthChk(title)}</h2>
                 </Link>
                 {allAuthors}
                 <span onClick={favClickHandler}><i className={heartIconToggle()}></i></span>

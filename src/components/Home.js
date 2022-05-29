@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { nanoid } from 'nanoid';
+
+
 import Loader from "./Loader";
-
-
-
 import Book from './Book'
+import CountContext from "../etc/CountContext";
 
 
 const Home = () => {
@@ -13,36 +13,44 @@ const Home = () => {
     const [booksData, setBooksData] = useState([])
     const [loading, setLoading] = useState()
 
-    const [newCall, setNewCall] = useState()
+    const { count, addCount, subtractCount, resetCount } = useContext(CountContext)
+
+    const [searched, setSearched] = useState('')
 
     useEffect(() => {
-        const apiCall = async () => {
-            setLoading(true)
-            const res = await fetch(newCall !== undefined || null || '' ? newCall : 'https://gnikdroy.pythonanywhere.com/api/book/?page=1');
-            const data = await res.json();
-            setBooksData(data);
-            setLoading(false)
-        }
+        if (searched === '') {
+            const apiCall = async () => {
+                setLoading(true)
+                const res = await fetch(`https://gnikdroy.pythonanywhere.com/api/book/?page=${count}`);
+                const data = await res.json();
+                setBooksData(data);
+                setLoading(false)
+            }
 
-        apiCall()
-    }, [newCall])
-    //handling prev and next btns calls
-    const handleNextClick = () => {
-        if (booksData.next !== null) {
-            setNewCall(booksData.next)
-        }
-    }
-    const handlePrevClick = () => {
-        if (booksData.previous !== null) {
-            setNewCall(booksData.previous)
-        }
-    }
+            apiCall()
+        } else {
 
-    const handleKeyDown = (e) => {
-        if (e.keyCode === 13) {
-            const value = e.target.value
-            setNewCall(`https://gnikdroy.pythonanywhere.com/api/book/?search=${value.replace(/\s+/g, '+')}`)
+            const wait = setTimeout(() => {
+                const apiCall = async () => {
+                    setLoading(true)
+                    const res = await fetch(`https://gnikdroy.pythonanywhere.com/api/book/?page=${count}&search=${searched}`);
+                    const data = await res.json();
+                    setBooksData(data);
+                    setLoading(false)
+                }
+                apiCall()
+            }, 1000)
+            return () => clearTimeout(wait)
+
         }
+    }, [count, searched])
+
+
+
+    const handleSearch = (e) => {
+        const value = e.target.value
+        setSearched(value.replace(/\s+/g, '+'))
+        resetCount()
     }
 
     const books = booksData.length !== 0 ? booksData.results.map(item => {
@@ -57,6 +65,17 @@ const Home = () => {
     }) : "";
 
 
+    //btns logic to prevent user from crossing data range
+    const btnLngt = booksData !== 0 ? Math.ceil(booksData.count / 10) : 0;
+    const btnchk = (x) => {
+        if (x.target.value > btnLngt) {
+            return
+        } else {
+            if (count > x.target.value) subtractCount(1)
+            else addCount(x.target.value - count);
+        }
+    }
+
     return (
         <main>
 
@@ -65,13 +84,18 @@ const Home = () => {
                     <>
                         <section>
                             <label htmlFor="search-bar">
-                                <input type="text" id="search-bar" placeholder="Search for books" onKeyDown={handleKeyDown} />
+                                <input type="search" id="search-bar" value={searched} placeholder="Search for books" onChange={handleSearch} />
                             </label>
                         </section>
                         <section>
                             <div className="controls">
-                                <button onClick={handlePrevClick}>Previous</button>
-                                <button onClick={handleNextClick}>Next</button>
+                                <button value={count - 1} onClick={(e) => btnchk(e)}>Previous</button>
+                                {count > 1 ? <button value={count - 1} onClick={(e) => btnchk(e)}>{count - 1}</button> : ""}
+                                <button >{count}</button>
+                                <button value={count + 1} onClick={(e) => btnchk(e)}>{count + 1}</button>
+                                <button value={count + 2} onClick={(e) => btnchk(e)}>{count + 2}</button>
+                                <button value={count + 1} onClick={(e) => btnchk(e)}>Next</button>
+
                             </div>
                             {books}
                         </section>
