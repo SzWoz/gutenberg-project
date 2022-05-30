@@ -4,11 +4,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 main .get-back {
-  position: fixed;
-  top: 5rem;
+  position: absolute;
+  top: 2rem;
   font-size: 2rem;
   text-decoration: none;
 }
@@ -41,6 +42,10 @@ main .book .details h1 {
 }
 
 main .book .details h2 {
+  flex-basis: 100%;
+}
+
+main .book .details h3 {
   flex-basis: 100%;
 }
 

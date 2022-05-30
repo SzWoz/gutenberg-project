@@ -34,12 +34,14 @@ const BookPage = () => {
     }).filter(x => x !== false) : 'loading'
 
 
+    const author = book.length !== 0 ? book.agents.filter(a => a.type === 'Author') : []
 
-    const author = book.length !== 0 ? book.agents.filter(a => a.type === 'Author') : ''
+    const allAuthors = author.map(item => {
+        const name = item.person;
+        const correctOrder = name.split(',').reverse();
+        return <h3 key={nanoid()}>{correctOrder.map(item => { return item + ' ' })}</h3>
+    })
 
-    const allAuthors = book.length !== 0 ? author.map(item => {
-        return <h2 key={nanoid()}>{item.person}</h2>
-    }) : ''
 
 
     const online = book.length !== 0 ? book.resources.map(item => {
@@ -60,7 +62,7 @@ const BookPage = () => {
 
     const favClickHandler = () => {
         if (favItems.filter(x => x.id === book.id).length > 0) return removeItems(book.id)
-        else return addItems(book.id, book.title, book.description, author, imgSrc, online)
+        else return addItems(book.id, book.title, book.description, allAuthors, imgSrc, online)
     }
 
 

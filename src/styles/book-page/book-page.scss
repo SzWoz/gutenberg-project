@@ -7,10 +7,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     .get-back {
-        position: fixed;
-        top: 5rem;
+        position: absolute;
+        top: 2rem;
         font-size: 2rem;
         text-decoration: none;
     }
@@ -43,6 +44,10 @@ main {
             }
 
             h2 {
+                flex-basis: 100%;
+            }
+
+            h3 {
                 flex-basis: 100%;
             }
 
