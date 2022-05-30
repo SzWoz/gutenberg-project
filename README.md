@@ -5,7 +5,7 @@ Its main function is to display books fetched from api. Users have ability to se
 
 ## Screen Shot
 
-In the project directory, you can run:
+<img src="/screen_shots/screen_shot.png" width="500">
 
 # Installation and Setup Instructions
 
