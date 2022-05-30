@@ -2,6 +2,7 @@
 
 This project is a recruitment task.
 Its main function is to display books fetched from api. Users have ability to search for book titles, genres, authors etc., they also can mark books as favourites.
+Built with React, ContextApi, JavaScript and SCSS
 
 ## Screen Shot
 
